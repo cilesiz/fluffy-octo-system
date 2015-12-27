@@ -1,0 +1,1 @@
+ruby -pe 'ruberizer.rb = # + ruberizer.rb' ruberizer.rb

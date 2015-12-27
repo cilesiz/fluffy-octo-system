@@ -1,0 +1,2 @@
+#!/bin/bash
+free -m | grep "buffers.cache" | awk '{print "Memory: "$3"/"$4}'

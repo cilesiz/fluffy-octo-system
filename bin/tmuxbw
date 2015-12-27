@@ -1,0 +1,2 @@
+#!/bin/bash
+bwm-ng -o csv  -c1 u bytes -I eth0 | awk -F';' 'NR>1{exit}; 1{printf "%.2f/%.2f/%.2f\n", $4/1024, $3/1024, 7077888/1024}'

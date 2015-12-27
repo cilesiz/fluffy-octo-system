@@ -1,0 +1,39 @@
+#!/bin/bash
+
+BG_COLOR="#000000"      # Background color
+FG_COLOR="#662020"      # Foreground color
+DIMENSIONS="570x342"    # Console dimensions
+GRAVITY="NorthEast"     # Text gravity (NorthWest, North, NorthEast,
+                        # West, Center, East, SouthWest, South, SouthEast)
+                        OFFSET="20,10"          # Text offset
+                        FONT_SIZE="34"          # Font size in points
+                        FONT_FAMILY="Georgia"   # Font family
+                        FONT_STYLE="Normal"     # Font style (Any, Italic, Normal, Oblique)
+
+#                        HOSTNAME=`echo $@ | sed 's/.* \(.*\)$/\1/' | sed "s/.*@//"`
+HOSTNAME=`echo $@ | sed 's/.* \(.*\)$/\1/' | sed 's/.net//' | sed "s/.*@//"`
+                        set_bg () {
+                          osascript -e "tell application \"iTerm\"
+                              set current_terminal to (current terminal)
+                                  tell current_terminal
+                                        set current_session to (current session)
+                                              tell current_session
+                                                      set background image path to \"$1\"
+                                                            end tell
+                                                                end tell
+                                                                  end tell"
+                                                                  }
+
+                                                                  on_exit () {
+                                                                    if [ ! -f /tmp/iTermBG.empty.png ]; then
+                                                                        convert -size "$DIMENSIONS" xc:"$BG_COLOR" "/tmp/iTermBG.empty.png"
+                                                                          fi
+                                                                            set_bg "/tmp/iTermBG.empty.png"
+                                                                              rm "/tmp/iTermBG.$$.png"
+                                                                              }
+                                                                              trap on_exit EXIT
+
+                                                                              convert -size "$DIMENSIONS" xc:"$BG_COLOR" -gravity "$GRAVITY" -fill "$FG_COLOR" -family "$FONT_FAMILY" -style "$FONT_STYLE" -pointsize "$FONT_SIZE" -antialias -draw "text $OFFSET '$HOSTNAME'" "/tmp/iTermBG.$$.png"
+                                                                              set_bg "/tmp/iTermBG.$$.png"
+										
+                                                                              /usr/bin/ssh "$@"

@@ -1,0 +1,39 @@
+# set some vars for colorization
+N='\033[0m'	# unsets color to term's fg color
+W='\033[0;37m'	# white
+Y='\033[0;33m'  # yellow
+
+echo -e "${Y}MMMMm                 MMMMMMMMMMM                   mMMMMMMMMMMMm"
+#sleep 1
+echo -e "${Y}MMMMMMM               mMMMMMMMMMm                 MMMMMMMMMMM"
+#sleep 1
+echo -e "MMMMMMMMm              MMMMMMMMM                mMMMMMMMMMm"
+#sleep 1
+echo -e "  MMMMMMMMM            mMMMMMMMm              MMMMMMMMM"
+#sleep 1
+echo -e "   mMMMMMMMMm           MMMMMMM             mMMMMMMMMm"
+sleep 1
+echo -e "       MMMMMMMM         mMMMMMm           MMMMMMMM"
+sleep 1
+echo -e "         mMMMMMm         MMMMM           mMMMMMm    ${W}P"
+sleep 1
+echo -e "             ${Y}MMMMM       mMMMm         MMMMM        ${W}L"
+sleep 1
+echo -e "              ${Y}mMMMm       MMM         mMMMm         ${W}A"
+sleep 1
+echo -e "                 ${Y}MMM      mMm        MMM           ${W} T"
+sleep 1
+echo -e "                   ${Y}mMm     M       mMm              ${W}I"
+sleep 1
+echo -e "		    ${Y}HHHHHHHHHHHHHHH${W}	            ${W}N"
+sleep 1
+echo -e "                  ${Y}HHHHHHHHHHHHHHHHHHH${W}               ${W}U"
+sleep 1
+echo -e "                 ${Y}HHHHHHHHHHHHHHHHHHHHH${W}              ${W}M"
+sleep 1
+echo -e "${W}@@@R@@@@@@@@@@@@${Y}HHHHHHHHHHHHHHHHHHHHHHH${W}@@@@@@@@@@@@@@@@@@@@"
+sleep 1
+echo -e "${W}@@@O@@@@@@@@@@@@${Y}HHHHHHHHHHHHHHHHHHHHHHH${W}@@@@@@@@@@@@@@@@@@@@"
+sleep 1
+echo -e "${W}@@@F@@@@@@@@@@@@${Y}HHHHHHHHHHHHHHHHHHHHHHH${W}@@@@@@@@@@@@@@@@@@@@"
+echo -e "${W}@@@@@@@@@@@@@@@@@@@@@@ ${Y}SUNRISE${N} ${W}e@@@@@@@@@@@@@@@@@@@@@@@@@@"

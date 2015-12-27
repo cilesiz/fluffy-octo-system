@@ -1,0 +1,2 @@
+#!/bin/bash
+uptime | awk '{print "Load: "$(NF-2)"/"$(NF-1)"/"$NF}'
